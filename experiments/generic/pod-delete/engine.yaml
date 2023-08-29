@@ -2,11 +2,11 @@ apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosEngine
 metadata:
   name: nginx-chaos
-  namespace: default
+  namespace: litmus3
 spec:
   appinfo:
-    appns: 'default'
-    applabel: 'app=nginx'
+    appns: 'openpass'
+    applabel: 'kube-monkey/enabled=enabled'
     appkind: 'deployment'
   # It can be active/stop
   engineState: 'active'
@@ -30,4 +30,4 @@ spec:
 
              ## percentage of total pods to target
             - name: PODS_AFFECTED_PERC
-              value: ''
+              value: '50'
